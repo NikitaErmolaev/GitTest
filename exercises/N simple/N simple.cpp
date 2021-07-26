@@ -1,5 +1,5 @@
 /*Write a function that calculates the
-first N prime numbers and put these 
+first N prime numbers and put these
 numbers in the array passed to it.*/
 
 
@@ -11,29 +11,29 @@ void printArray(int N, int arr[]);
 
 void main()
 {
-	setlocale(LC_ALL, "ru");
+	setlocale(LC_ALL, "eng");
 	int N = 0;
-	
-	cout << "¬ведите кол-во первых простых чисел (N): " << endl;
+
+	cout << "Enter the number of the first prime numbers (N): " << endl;
 	cin >> N;
 	cout << endl;
-		
-	int *arr = new int[N];	//объ€вление динамического массива
-	simple(N, arr);			
-	
-	printArray(N, arr);		//дл€ поставленного задани€ эта функци€ не требуетс€, 
-							//т.к. у нас не прос€т вывести массив на эран, 
-							//но дл€ проверки работоспособности она необходима
-	
-	
-	delete[] arr;			//чистка пам€ти и удаление данных массива
-	arr = nullptr;			//чистка адреса указател€
+
+	int* arr = new int[N];	//declaring a dynamic array
+	simple(N, arr);
+
+	printArray(N, arr);		//for the given task, this function is not required,
+							//since we are not asked to display an array on the screen,
+							//but it is necessary to check its operability
+
+
+	delete[] arr;			//cleaning memory and deleting array data
+	arr = nullptr;			//cleaning the pointer address
 	system("pause");
 }
 
 
-//функци€ записи в массив первых N простых чисел
-void simple(int N, int arr[])		
+//the function of writing the first N primes to an array
+void simple(int N, int arr[])
 {
 	int x = 1;
 	int counter = 0;
@@ -41,16 +41,16 @@ void simple(int N, int arr[])
 	while (counter < N)
 	{
 		int i = 2;
-		bool y = true;		//каждый раз присваиваем необходимые значени€ переменным
-		
-		while (i < x)		//цикл определениющих простое число или нет
-		{					
+		bool y = true;		//each time we assign the necessary values to the variables
+
+		while (i < x)		//we define a prime number or not
+		{
 			if (x % i == 0)
 				y = false;
 			i++;
 		}
 
-		if (y)				//условие дл€ правильной работы счетчика
+		if (y)				//condition for the correct operation of the counter
 		{
 			arr[counter] = x;
 			counter++;
@@ -59,8 +59,8 @@ void simple(int N, int arr[])
 	}
 }
 
-// ‘ункци€ вывода массива на экран
-void printArray(int N, int arr[])	
+//array output function on the screen
+void printArray(int N, int arr[])
 {
 	int j = 0;
 	for (int i = 0; i < N; i++)
