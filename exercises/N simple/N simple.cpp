@@ -22,8 +22,8 @@ void main()
 	simple(N, arr);
 
 	printArray(N, arr);		//for the given task, this function is not required,
-							//since we are not asked to display an array on the screen,
-							//but it is necessary to check its operability
+					//since we are not asked to display an array on the screen,
+					//but it is necessary to check its operability
 
 
 	delete[] arr;			//cleaning memory and deleting array data
@@ -50,7 +50,7 @@ void simple(int N, int arr[])
 			i++;
 		}
 
-		if (y)				//condition for the correct operation of the counter
+		if (y)			//condition for the correct operation of the counter
 		{
 			arr[counter] = x;
 			counter++;
